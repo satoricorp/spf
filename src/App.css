@@ -1,0 +1,377 @@
+:root {
+  font-family:
+    "Aptos",
+    "DIN Alternate",
+    "SF Pro Text",
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #151715;
+  background:
+    linear-gradient(90deg, rgba(25, 29, 26, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(25, 29, 26, 0.08) 1px, transparent 1px),
+    #f1f0eb;
+  background-size: 44px 44px;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  color: #151715;
+}
+
+.sidebar {
+  width: 276px;
+  min-width: 276px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 22px 18px;
+  border-right: 1px solid #d8d4c8;
+  background: rgba(250, 249, 244, 0.84);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #20221f;
+  background: #20221f;
+  color: #f4f0e5;
+  font-family:
+    "SF Mono",
+    "Aptos Mono",
+    ui-monospace,
+    monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.eyebrow {
+  margin: 0 0 3px;
+  color: #6d7069;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.2rem;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin-top: 4px;
+  font-size: 1.45rem;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.provider-list {
+  display: grid;
+  gap: 8px;
+}
+
+.provider {
+  width: 100%;
+  min-height: 40px;
+  display: grid;
+  grid-template-columns: 10px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #3d403b;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.provider:hover,
+.provider.active {
+  border-color: #cbc5b7;
+  background: #f5f2e9;
+  color: #151715;
+}
+
+.provider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #6d7069;
+}
+
+.provider-dot.codex {
+  background: #2c6f4f;
+}
+
+.provider-dot.claude {
+  background: #a9502c;
+}
+
+.provider-dot.cursor {
+  background: #315f9c;
+}
+
+.provider-count {
+  min-width: 24px;
+  padding: 1px 7px;
+  border: 1px solid #d8d4c8;
+  border-radius: 999px;
+  color: #6d7069;
+  font-family:
+    "SF Mono",
+    "Aptos Mono",
+    ui-monospace,
+    monospace;
+  font-size: 0.76rem;
+  text-align: center;
+}
+
+.sidebar-footer {
+  min-height: 36px;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 10px;
+  border: 1px solid #d8d4c8;
+  border-radius: 6px;
+  color: #6d7069;
+  background: rgba(255, 255, 255, 0.38);
+  font-size: 0.84rem;
+}
+
+.pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #8a8d84;
+}
+
+.workspace {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.topbar {
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.summary-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(104px, 1fr));
+  overflow: hidden;
+  border: 1px solid #d8d4c8;
+  border-radius: 6px;
+  background: rgba(250, 249, 244, 0.72);
+}
+
+.summary-strip div {
+  min-height: 54px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+  padding: 8px 14px;
+  color: #62665f;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.summary-strip div + div {
+  border-left: 1px solid #d8d4c8;
+}
+
+.summary-strip span {
+  color: #151715;
+  font-family:
+    "SF Mono",
+    "Aptos Mono",
+    ui-monospace,
+    monospace;
+  font-size: 1.12rem;
+  font-weight: 700;
+}
+
+.session-panel {
+  flex: 1;
+  min-height: 360px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #cfc9ba;
+  border-radius: 8px;
+  background: rgba(250, 249, 244, 0.9);
+  box-shadow: 0 18px 50px rgba(45, 43, 35, 0.12);
+}
+
+.session-table-header {
+  min-height: 42px;
+  display: grid;
+  grid-template-columns: minmax(120px, 1.1fr) minmax(160px, 1.7fr) minmax(96px, 0.8fr) minmax(96px, 0.8fr);
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  border-bottom: 1px solid #d8d4c8;
+  color: #70736c;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.empty-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 42px 24px;
+  text-align: center;
+}
+
+.empty-grid {
+  width: 102px;
+  height: 78px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.empty-grid span {
+  border: 1px solid #d3cec0;
+  border-radius: 4px;
+  background:
+    linear-gradient(135deg, rgba(44, 111, 79, 0.14), transparent),
+    #f6f3ea;
+}
+
+.empty-state h3 {
+  font-size: 1.15rem;
+  letter-spacing: 0;
+}
+
+.empty-state p {
+  max-width: 430px;
+  color: #62665f;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: 0;
+    border-right: 0;
+    border-bottom: 1px solid #d8d4c8;
+  }
+
+  .provider-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .provider {
+    grid-template-columns: 10px 1fr;
+  }
+
+  .provider-count {
+    display: none;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .summary-strip {
+    width: 100%;
+  }
+
+  .session-table-header {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .session-table-header span:nth-child(3),
+  .session-table-header span:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .workspace {
+    padding: 18px;
+  }
+
+  .provider-list,
+  .summary-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-strip div + div {
+    border-left: 0;
+    border-top: 1px solid #d8d4c8;
+  }
+}
